@@ -1,6 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: var(--background-colours);
+}
+
+:root{
+    --background-colours: #f0f0f0;
+    --text-colour: #7b8db8;
 }
 
 .headlines{
@@ -17,6 +23,16 @@
     display: inline-block;
     padding: 2px 12px;
     position: relative;
+}
+
+.nav-links ul li a, .nav-links ul li select{
+    text-decoration: none;
+    color: var(--text-colour);
+    font-size: 20px;
+}
+
+.nav-links ul li select{
+    border-radius: 25px;
 }
 
 .nav-links{
