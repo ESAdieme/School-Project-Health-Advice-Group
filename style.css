@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.headlines{
+    min-height: 10vh;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid black;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 2px 12px;
+    position: relative;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+nav{
+    display: flex;
+    padding: 2% 4%;
+    flex-direction: row-reverse;
+    align-items: center;
+}
