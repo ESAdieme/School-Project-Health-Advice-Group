@@ -6,7 +6,7 @@
 :root {
     --background-colours: #f0f0f0;
     --text-colour: rgb(25, 80, 91);
-    --text-colour-2: #ffffff;
+    --hover-colour: rgb(17, 57, 65);
 }
 
 .headlines {
@@ -22,7 +22,7 @@
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 2px 12px;
+    padding: 2px 20px;
     position: relative;
 }
 
@@ -30,11 +30,31 @@
 .nav-links ul li select {
     text-decoration: none;
     color: var(--text-colour);
-    font-size: 20px;
+    font-size: 3vh;
+    background: none;
+}
+
+.nav-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--hover-colour);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
 }
 
 .nav-links ul li select {
-    border-radius: 25px;
+    border-style: none;
+}
+
+
+.nav-links ul li select:hover {
+    background: transparent;
 }
 
 .nav-links {
@@ -54,6 +74,49 @@ nav {
     height: 11vh;
     position: absolute;
     margin-left: 5vh;
+}
+
+.nav-links ul li button {
+    border: none;
+}
+
+/*Dropdown Select */
+
+.selected {
+    display: none;
+    background-color: #e1e4ed;
+    border-top: 1px black solid;
+    padding: 2% 4%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.selected ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 1px 20px 0;
+    position: relative;
+}
+
+.selected ul li a {
+    font-size: 3vh;
+    color: var(--text-colour);
+    text-decoration: none;
+}
+
+.selected ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--hover-colour);
+    display: block;
+    margin: auto;
+    position: relative;
+    transition: 0.5s;
+}
+
+.selected ul li:hover::after {
+    width: 100%;
 }
 
 /* Welcome section*/
@@ -79,5 +142,5 @@ nav {
 }
 
 .welcome {
-    padding-left: 10vh;
+    margin-left: 10vh;
 }
