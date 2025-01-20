@@ -7,27 +7,27 @@
     <title>Health Advice Group - Home</title>
     <link rel="shortcut icon"
         href="https://preview.redd.it/what-is-the-rawest-pose-sonic-has-ever-dropped-v0-gs5ohsdvew5c1.jpg?width=1080&crop=smart&auto=webp&s=416558a4333d4c4a221580bcd2dfe4e0af14a937">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home/style.css">
 </head>
 
 <body>
     <header>
         <section class="headlines">
             <div class="headers">
-                <img src="images/logo.png" id="logo">
+                <img src="home/images/logo.png" id="logo">
                 <nav class="nav-links main-links">
                     <ul>
                         <li style="position: relative;">
                             <a id="select-service">Select a service</a>
                             <div class="selected" id="selected">
                                 <ul>
-                                    <li><a href="#">Login</a></li>
+                                    <li><a href="login.html">Login</a></li>
                                     <li><a href="#">Sign up</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#" id="aboutUs">About Us</a></li>
+                        <li><a href="#contact" id="contactUs">Contact Us</a></li>
                         <li><a href="#" id="reviews">Reviews</a></li>
                     </ul>
                 </nav>
@@ -44,11 +44,29 @@
             </div>
         </section>
 
-        <section class="Extras">
+        <section class="information">
             <div id="texteditor"></div>
+            <div class="contactUs" id="contact">
+                <fieldset class="contactInfo">
+                    <legend>
+                        <h2>Contact Us</h2>
+                    </legend>
+                    <form action="./loading.html" method="POST">
+                        <label for="firstName">Enter Your First Name: </label>
+                        <input id="firstName" name="firstName" type="text">
+                        <label for="lastName">Enter Your Last Name: </label>
+                        <input id="lastName" name="lastName" type="text">
+                        <label for="gmail">Enter your email here: </label>
+                        <input id="gmail" name="gmail" type="email">
+                        <label for="message">Reason for contact: </label>
+                        <textarea id="message" placeholder="Enter your message here"></textarea>
+                        <input id="submit" placeholder="Submit" type="submit">
+                    </form>
+                </fieldset>
+            </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="home/script.js"></script>
 </body>
 
 </html>
