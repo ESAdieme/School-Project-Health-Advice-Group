@@ -17,30 +17,35 @@
                 <img src="images/logo.png" id="logo">
                 <nav class="nav-links main-links">
                     <ul>
-                        <li><a href="#" id="select-service">Select a service</a></li>
-                        <li><a href>About Us</a></li>
-                        <li><a href>Contact Us</a></li>
-                        <li><a href>Reviews</a></li>
+                        <li style="position: relative;">
+                            <a id="select-service">Select a service</a>
+                            <div class="selected" id="selected">
+                                <ul>
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Sign up</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#" id="reviews">Reviews</a></li>
                     </ul>
                 </nav>
             </div>
         </section>
     </header>
     <main>
-        <div class="selected" id="selected">
-            <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Sign up</a></li>
-            </ul>
-        </div>
         <section class="main-site">
             <div class="welcome">
                 <h1>Health Advice Group</h1>
                 <p>Empowering healthier lives through expert guidance,<br> tailored wellness solutions,<br> and trusted
                     health
                     advice for individuals and communities.</p>
-                <div id="texteditor"></div>
             </div>
+        </section>
+
+        <section class="Extras">
+            <div id="texteditor"></div>
         </section>
     </main>
     <script src="script.js"></script>

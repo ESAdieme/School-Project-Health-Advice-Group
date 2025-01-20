@@ -76,47 +76,66 @@ nav {
     margin-left: 5vh;
 }
 
+@media only screen and (max-width: 500px) {
+    #logo {
+        width: 9vh;
+        height: 9vh;
+        position: absolute;
+        right: 80%;
+        margin-left: 5vh;
+    }
+}
+
 .nav-links ul li button {
     border: none;
 }
 
-/*Dropdown Select */
-
+/* Dropdown Select */
 .selected {
     display: none;
-    background-color: #e1e4ed;
-    border-top: 1px black solid;
-    padding: 2% 4%;
-    flex-direction: row;
-    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 12%;
+}
+
+.selected ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .selected ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 1px 20px 0;
-    position: relative;
+    width: 100%;
+    padding: 0.5rem 0;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.selected ul li:hover {
+    background-color: #f7f7f7;
+}
+
+#select-service:hover {
+    cursor: pointer;
 }
 
 .selected ul li a {
-    font-size: 3vh;
+    font-size: 1.2rem;
     color: var(--text-colour);
     text-decoration: none;
-}
-
-.selected ul li::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background-color: var(--hover-colour);
-    display: block;
-    margin: auto;
-    position: relative;
-    transition: 0.5s;
-}
-
-.selected ul li:hover::after {
     width: 100%;
+    display: block;
 }
 
 /* Welcome section*/
@@ -133,7 +152,7 @@ nav {
 .welcome h1 {
     padding: 30vh 0 3vh 0;
     font-size: 10.25vh;
-    color: var(--text-colour)
+    color: var(--text-colour);
 }
 
 .welcome p {
@@ -144,3 +163,26 @@ nav {
 .welcome {
     margin-left: 10vh;
 }
+
+@media only screen and (max-width: 500px) {
+    .welcome h1 {
+        padding: 30vh 0 3vh 0;
+        font-size: 7.25vh;
+        color: var(--text-colour);
+        position: absolute;
+        bottom: 50%;
+    }
+
+    .welcome p {
+        font-size: 3vh;
+        color: var(--text-colour);
+        position: absolute;
+        top: 50%;
+    }
+
+    .welcome {
+        margin-left: 5vh;
+    }
+}
+
+/* Review Section */
