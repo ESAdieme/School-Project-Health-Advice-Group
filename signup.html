@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Advice Group - signup</title>
+    <link rel="shortcut icon"
+        href="https://static.wikia.nocookie.net/miles-tails-prower/images/7/7c/Miles_Tails_Prower_Sonic_and_All-Stars_Racing_Transformed_1.png/revision/latest?cb=20231021004938">
+    <link rel="stylesheet" href="signup/style.css">
+</head>
+
+<body>
+    <main>
+        <section class="signup-section">
+            <h1>Signup</h1>
+            <form class="signup-form" action="./signup.html" method="POST">
+                <div class="form-group">
+                    <label for="firstName">First Name: </label>
+                    <input for="firstName" name="firstName" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name: </label>
+                    <input for="lastName" name="lastName" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="gmail">Email: </label>
+                    <input for="gmail" name="gmail" type="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password" min="3" max="5" required />
+                </div>
+                <button type="submit" class="signup-button">SIGNUP</button>
+                <p class="register-link">Already have an account?<br><a href="login.html"><span>Login here</span></a></p>
+            </form>
+        </section>
+    </main>
+    <script src="signup/script.js"></script>
+</body>
+
+</html>
