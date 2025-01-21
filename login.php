@@ -1,11 +1,10 @@
 <?php
-
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     // Database connection
-    $mysqli = require __DIR__ . "Service/database.php";
+    $mysqli = require __DIR__ . "/database.php";
     
     // Prepare the SQL query to prevent SQL injection
     $sql = sprintf("SELECT * FROM user_information
@@ -30,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Store user details in session
             $_SESSION["user_id"] = $user["User_ID"];
             $_SESSION["username"] = $user["Username"];
-            $_SESSION["first_name"] = $user["First_Name"];
-            $_SESSION["last_name"] = $user["Last_Name"];
+            $_SESSION["first_name"] = $user["First_name"];
+            $_SESSION["last_name"] = $user["Last_name"];
             $_SESSION["email"] = $user["email"];
             
             // Redirect to index page
-            echo"login successful";
+            header("Location: dashboard.php");
             exit;
         }
     }

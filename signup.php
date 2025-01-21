@@ -22,7 +22,7 @@
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // Prepare the SQL query to inNamesert data into the customer table
-    $sql = "INSERT INTO user_information (First_name, Last_Name, email, Username, Password) 
+    $sql = "INSERT INTO user_information (First_name, Last_name, email, Username, Password) 
     VALUES ('$firstName', '$lastName', '$email', '$username', '$password')";
 
     // Execute the query and check if data is inserted successfully
