@@ -1,0 +1,95 @@
+const apiKey = '36c0f65f2f945402cf22bcb06c3ba907';
+const weatherButton = document.getElementById('get-weather-btn');
+const cityInput = document.getElementById('city-input');
+const weatherCont = document.querySelector('.weather-container');
+
+
+const service = document.getElementById("select-service");
+const dropdownSelected = document.getElementById("selected");
+
+const htmlSelector = document.querySelector('html');
+
+
+weatherButton.addEventListener('click', () => {
+    const city = cityInput.value.trim();
+    if (city) {
+        getWeather(city);
+    }
+});
+
+async function getWeather(city) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.cod === '404') {
+            alert('City not found');
+        } else {
+            displayWeather(data);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+function displayWeather(data) {
+    const cityName = document.getElementById('city-name');
+    const temperature = document.getElementById('temperature');
+    const description = document.getElementById('description');
+    const humidity = document.getElementById('humidity');
+    const windSpeed = document.getElementById('wind-speed');
+    const weatherImage = document.getElementById('weather-image');  // Add this to hold the image
+
+    cityName.textContent = `Weather in ${data.name}, ${data.sys.country}`;
+    temperature.textContent = `Temperature: ${data.main.temp}°C`;
+    description.textContent = `Description: ${data.weather[0].description}`;
+    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
+
+    // Set the appropriate weather image
+    setWeatherImage(data.weather[0].main.toLowerCase(), weatherImage);
+}
+
+// Map weather condition to image
+function setWeatherImage(condition, imageElement) {
+    const weatherImages = {
+        clear: 'clear.png',
+        clouds: 'clouds.png',
+        drizzle: 'drizzle.png',
+        rain: 'rain.png',
+        snow: 'snow.png',
+        mist: 'mist.png',
+        wind: 'wind.png',
+        humidity: 'humidity.png',  // You can add this for specific cases, although it might not be a common condition
+        search: 'search.png',      // This can be used for when the city is not found, as an example
+    };
+
+    // Set the image source based on the condition
+    const imageUrl = `weather/images/${weatherImages[condition] || 'search.png'}`;  // Default to 'search.png' if no match
+    imageElement.src = imageUrl;
+    imageElement.alt = condition;
+}
+
+// Keep track of the currently active button
+let activeButton = null;
+
+// Toggle dropdown visibility on click
+service.addEventListener("click", () => {
+    dropdownSelected.style.display =
+        dropdownSelected.style.display === "flex" ? "none" : "flex";
+});
+
+// If Loading screen hasn't been shown, redirect them to the loading page
+if (!localStorage.getItem('hasVisitedLoading')) {
+    // Hides home screen info
+    htmlSelector.style.display = "none";
+    localStorage.setItem('load', 'weather.php'); //Enters the HTML file for index into the global variable 'load'
+    window.location.href = 'loading.html';
+} else {
+    //Shows home screen info
+    htmlSelector.style.display = "inline";
+    localStorage.removeItem('hasVisitedLoading');
+    localStorage.removeItem('load'); //Removes Load in general when complete
+}

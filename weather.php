@@ -12,18 +12,15 @@ if (!isset($_SESSION["user_id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Advice Group - Dashboard</title>
-    <link rel="stylesheet" href="dashboard/dashboard.css" />
-    <link rel="shortcut icon"
-        href="https://en.wikifur.com/w/images/thumb/f/f0/Sonicchannel_amy_nocircle.png/366px-Sonicchannel_amy_nocircle.png" />
+    <title>Health Advice Group - Weather</title>
+    <link rel="stylesheet" href="weather/weather.css">
+    <link rel="shortcut icon" href="https://en.wikifur.com/w/images/3/39/Knuckles_%282D%29.png">
 </head>
-
 <body>
-    <header>
+<header>
         <section class="headlines">
             <div class="headers">
                 <img src="home/images/logo.png" id="logo" />
@@ -33,7 +30,7 @@ if (!isset($_SESSION["user_id"])) {
                             <a id="select-service">Dashboard Options</a>
                             <div class="selected" id="selected">
                                 <ul>
-                                    <li><a href="weather.php">Weather Forecasting</a></li>
+                                    <li><a href="dashboard.php">Dashboard</a></li>
                                     <li><a href="#">Air Quality</a></li>
                                     <li><a href="#">Health Advice</a></li>
                             </div>
@@ -48,15 +45,22 @@ if (!isset($_SESSION["user_id"])) {
         </section>
     </header>
     <main>
-        <section class="main-site">
-            <div class="welcome">
-                <h1>Welcome, <?php echo htmlspecialchars($_SESSION["first_name"]); ?>
-                    <?php echo htmlspecialchars($_SESSION['last_name'])?>!</h1>
-                <p> Your advice today is <?php echo htmlspecialchars($_SESSION['health_advice'])?></p>
-                <p> It is current <span id="weather"></span> today</p>
+        <div class="weather-container">
+            <h1>Weather App</h1>
+            <input type="text" id="city-input" placeholder="Enter City">
+            <button id="get-weather-btn">Get Weather</button>
+            <div id="weather-info">
+                <!-- Add this inside the #weather-info div in your HTML -->
+                <h2 id="city-name"></h2>
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+                <img id="weather-image" src="weather/images/search.png" alt="Weather Image" style="max-width: 200px; margin-top: 20px;" />
             </div>
-        </section>
-        <script src="dashboard/dashboard.js"></script>
-</body>
+        </div>
+    </main>
 
+    <script src="weather/script.js"></script>
+</body>
 </html>

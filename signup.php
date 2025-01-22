@@ -1,11 +1,9 @@
 <?php 
-
     $db_server = "localhost";
     $db_user = "root";
     $db_pass = "";
     $db_name = "healthadvicegroup";
     $conn = "";
-
 
     $conn = new mysqli($db_server, $db_user, $db_pass, $db_name);
 
@@ -15,23 +13,32 @@
     }
 
     // Get the form data
+    $userID = uniqid();
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['gmail'];
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Prepare the SQL query to inNamesert data into the customer table
-    $sql = "INSERT INTO user_information (First_name, Last_name, email, Username, Password) 
-    VALUES ('$firstName', '$lastName', '$email', '$username', '$password')";
+    // Prepare the SQL query to insert data into the user_information table
+    $sql_user_info = "INSERT INTO user_information (User_ID, First_name, Last_name, email, Username, Password) 
+                      VALUES ('$userID', '$firstName', '$lastName', '$email', '$username', '$password')";
 
-    // Execute the query and check if data is inserted successfully
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        header("Location: login.html");
-        exit;
+    // Execute the query for user_information table
+    if ($conn->query($sql_user_info) === TRUE) {
+        // Now insert into the user_data table, linking with the same User_ID
+        $sql_user_data = "INSERT INTO user_data (Data_ID, User_ID, healthAdvice) 
+                          VALUES (UUID(), '$userID', 'General Health Advice')";
+
+        if ($conn->query($sql_user_data) === TRUE) {
+            echo "New record created successfully in both tables";
+            header("Location: login.html");
+            exit;
+        } else {
+            echo "Error inserting data into user_data: " . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error inserting into user_information: " . $conn->error;
     }
 
     // Close the database connection
