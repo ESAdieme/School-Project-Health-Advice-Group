@@ -1,10 +1,8 @@
-Sure! Here's the updated README that includes the health advice feature:
-
-```markdown
 # Health Advice Group
 
 Welcome to the **Health Advice Group** project! This web application is designed to provide users with personalized health advice and information based on real-time weather and air quality data. Users can create accounts, log in, and access a range of features that help them make informed decisions about their health and well-being.
 
+```
 ## Features
 
 - **Home Page**: An engaging landing page that introduces users to the Health Advice Group and its mission.
@@ -27,6 +25,7 @@ Welcome to the **Health Advice Group** project! This web application is designed
 - Backend: PHP
 - APIs: OpenWeatherMap
 - Database: phpMyAdmin
+```
 
 ## Getting Started
 
@@ -45,7 +44,7 @@ To get a local copy up and running follow these simple steps:
 3. **Install dependencies**:
    ```bash
    npm install
-   ```
+
 
 4. **Set Up Environment Variables**: Create a `.env` file in the root directory and add your API keys and other configuration settings.
 
