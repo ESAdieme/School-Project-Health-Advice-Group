@@ -36,7 +36,7 @@ if (!isset($_SESSION["user_id"])) {
                                 <ul>
                                     <li><a href="weather.php">Weather Forecasting</a></li>
                                     <li><a href="airpollution.php">Air Quality</a></li>
-                                    <li><a href="#">Health Advice</a></li>
+                                    <li><a href="healthadvice.php">Health Advice</a></li>
                             </div>
                         </li>
                         <li><a href="#" id="reviews">Settings</a></li>

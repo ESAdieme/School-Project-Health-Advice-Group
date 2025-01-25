@@ -40,9 +40,6 @@ async function getAirPollutionData() {
     }
 }
 
-// Keep track of the currently active button
-let activeButton = null;
-
 // Toggle dropdown visibility on click
 service.addEventListener("click", () => {
     dropdownSelected.style.display =

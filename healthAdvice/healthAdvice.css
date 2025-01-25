@@ -153,15 +153,33 @@ nav {
     display: block;
 }
 
-/* Main-Site Section */ 
+/* Main-Site Section */
 
-.title{
-    padding: 20px;
-    max-width: 90vh;
+.title {
+    padding: 30px;
+    max-width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Subtle background for better readability */
+    border-radius: 15px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    text-align: center;
 }
 
-.title h1{
-    padding-bottom: 20px;
+.title h1 {
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    /* Larger headline */
+    color: #003366;
+    /* Darker blue for contrast */
+}
+
+.title p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    /* Better readability for the paragraph */
+    color: #003366;
 }
 
 .main-site {
@@ -171,21 +189,27 @@ nav {
     justify-content: center;
     text-align: center;
     margin: 20px;
-    font-size: 2rem;
-    color: white;
+    gap: 30px;
+    /* Space between sections */
 }
 
 .health-video {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Subtle overlay for the video area */
+    border-radius: 15px;
+    /* Rounded edges for the video container */
+    padding: 20px;
+    /* Spacing around videos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Slight shadow for depth */
 }
 
 video {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 20px;
     max-width: 100%;
-    height: auto;
+    border-radius: 10px;
+    /* Rounded edges for the video itself */
 }
