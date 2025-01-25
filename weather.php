@@ -12,6 +12,7 @@ if (!isset($_SESSION["user_id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,25 +20,25 @@ if (!isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="weather/weather.css">
     <link rel="shortcut icon" href="https://en.wikifur.com/w/images/3/39/Knuckles_%282D%29.png">
 </head>
+
 <body>
-<header>
+    <header>
         <section class="headlines">
             <div class="headers">
                 <img src="home/images/logo.png" id="logo" />
                 <nav class="nav-links">
                     <ul>
+                        <li><a href="index.html" id="aboutUs">Home</a></li>
                         <li style="position: relative;">
                             <a id="select-service">Dashboard Options</a>
                             <div class="selected" id="selected">
                                 <ul>
                                     <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li><a href="#">Air Quality</a></li>
+                                    <li><a href="airpollution.php">Air Quality</a></li>
                                     <li><a href="#">Health Advice</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="aboutUs">About Us</a></li>
-                        <li><a href="#" id="reviews">Reviews</a></li>
-                        <li><a href="#contact" id="contactUs">Contact Us</a></li>
+                        <li><a href="#" id="reviews">Settings</a></li>
                         <li><a href="logout.php" id="contactUs">Log out</a></li>
                     </ul>
                 </nav>
@@ -56,11 +57,13 @@ if (!isset($_SESSION["user_id"])) {
                 <p id="description"></p>
                 <p id="humidity"></p>
                 <p id="wind-speed"></p>
-                <img id="weather-image" src="weather/images/search.png" alt="Weather Image" style="max-width: 200px; margin-top: 20px;" />
+                <img id="weather-image" src="weather/images/search.png" alt="Weather Image"
+                    style="max-width: 200px; margin-top: 20px;" />
             </div>
         </div>
     </main>
 
     <script src="weather/script.js"></script>
 </body>
+
 </html>

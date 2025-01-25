@@ -16,10 +16,10 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Advice Group - Dashboard</title>
-    <link rel="stylesheet" href="dashboard/dashboard.css" />
+    <title>Health Advice Group - Air Pollution</title>
+    <link rel="stylesheet" href="pollution/style.css">
     <link rel="shortcut icon"
-        href="https://en.wikifur.com/w/images/thumb/f/f0/Sonicchannel_amy_nocircle.png/366px-Sonicchannel_amy_nocircle.png" />
+        href="https://static.wikia.nocookie.net/sonic/images/b/b4/E-123_Omega_art_2D_v2.png/revision/latest/scale-to-width-down/250?cb=20201222065954">
 </head>
 
 <body>
@@ -31,11 +31,11 @@ if (!isset($_SESSION["user_id"])) {
                     <ul>
                         <li><a href="index.html" id="aboutUs">Home</a></li>
                         <li style="position: relative;">
-                            <a id="select-service">Dashboard Options</a>
+                            <a id="select-service">Options</a>
                             <div class="selected" id="selected">
                                 <ul>
                                     <li><a href="weather.php">Weather Forecasting</a></li>
-                                    <li><a href="airpollution.php">Air Quality</a></li>
+                                    <li><a href="dashboard.php">Dashboard</a></li>
                                     <li><a href="#">Health Advice</a></li>
                             </div>
                         </li>
@@ -47,14 +47,20 @@ if (!isset($_SESSION["user_id"])) {
         </section>
     </header>
     <main>
-        <section class="main-site">
-            <div class="welcome">
-                <h1>Welcome, <?php echo htmlspecialchars($_SESSION["first_name"]); ?>
-                    <?php echo htmlspecialchars($_SESSION['last_name'])?>!</h1>
-                <p> Your advice today is <?php echo htmlspecialchars($_SESSION['health_advice'])?></p>
+        <div class="container">
+            <h1>Air Pollution Data</h1>
+            <p class="instructions">Enter Latitude and Longitude to retrieve air quality information.</p>
+            <div class="input-section">
+                <input type="text" id="latitude" placeholder="Latitude">
+                <input type="text" id="longitude" placeholder="Longitude">
+                <button onclick="getAirPollutionData()">Get Data</button>
             </div>
-        </section>
-        <script src="dashboard/dashboard.js"></script>
+            <div class="result" id="result">
+                <!-- Data will be dynamically inserted here -->
+            </div>
+        </div>
+        <script src="pollution/script.js"></script>
+    </main>
 </body>
 
 </html>
