@@ -21,3 +21,14 @@ if (!localStorage.getItem('hasVisitedLoading')) {
     localStorage.removeItem('hasVisitedLoading');
     localStorage.removeItem('load'); //Removes Load in general when complete
 }
+
+const darkMode = document.getElementById('darkMode');
+
+darkMode.addEventListener('click', () => {
+
+    const isDark = false;
+
+    if (darkMode == true){
+        
+    }
+})

@@ -29,7 +29,7 @@ if (!isset($_SESSION["user_id"])) {
                 <img src="home/images/logo.png" id="logo" />
                 <nav class="nav-links">
                     <ul>
-                        <li><a href="index.html" id="aboutUs">Home</a></li>
+                        <li><a href="index.html" id="home">Home</a></li>
                         <li style="position: relative;">
                             <a id="select-service">Dashboard Options</a>
                             <div class="selected" id="selected">
@@ -39,8 +39,8 @@ if (!isset($_SESSION["user_id"])) {
                                     <li><a href="healthadvice.php">Health Advice</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="reviews">Settings</a></li>
-                        <li><a href="logout.php" id="contactUs">Log out</a></li>
+                        <li><a href="#" id="darkMode">Dark Mode</a></li>
+                        <li><a href="logout.php" id="logOut">Log out</a></li>
                     </ul>
                 </nav>
             </div>
