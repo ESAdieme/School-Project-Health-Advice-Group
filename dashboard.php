@@ -39,7 +39,7 @@ if (!isset($_SESSION["user_id"])) {
                                     <li><a href="healthadvice.php">Health Advice</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="darkMode">Dark Mode</a></li>
+                        <li><a href="settings.php" id="settings">Settings</a></li>
                         <li><a href="logout.php" id="logOut">Log out</a></li>
                     </ul>
                 </nav>

@@ -40,7 +40,7 @@ function displayWeather(data) {
     const description = document.getElementById('description');
     const humidity = document.getElementById('humidity');
     const windSpeed = document.getElementById('wind-speed');
-    const weatherImage = document.getElementById('weather-image');  // Add this to hold the image
+    const weatherImage = document.getElementById('weather-image');  
 
     cityName.textContent = `Weather in ${data.name}, ${data.sys.country}`;
     temperature.textContent = `Temperature: ${data.main.temp}°C`;
@@ -48,7 +48,6 @@ function displayWeather(data) {
     humidity.textContent = `Humidity: ${data.main.humidity}%`;
     windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
 
-    // Set the appropriate weather image
     setWeatherImage(data.weather[0].main.toLowerCase(), weatherImage);
 }
 
@@ -62,8 +61,8 @@ function setWeatherImage(condition, imageElement) {
         snow: 'snow.png',
         mist: 'mist.png',
         wind: 'wind.png',
-        humidity: 'humidity.png',  // You can add this for specific cases, although it might not be a common condition
-        search: 'search.png',      // This can be used for when the city is not found, as an example
+        humidity: 'humidity.png',  // Use for specific cases, although it might not be a common condition
+        search: 'search.png',      // Set as Default 
     };
 
     // Set the image source based on the condition
@@ -71,9 +70,6 @@ function setWeatherImage(condition, imageElement) {
     imageElement.src = imageUrl;
     imageElement.alt = condition;
 }
-
-// Keep track of the currently active button
-let activeButton = null;
 
 // Toggle dropdown visibility on click
 service.addEventListener("click", () => {

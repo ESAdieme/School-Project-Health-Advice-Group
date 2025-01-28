@@ -12,17 +12,13 @@ if (!isset($_SESSION["user_id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Advice Group - Air Pollution</title>
-    <link rel="stylesheet" href="pollution/style.css">
-    <link rel="shortcut icon"
-        href="https://static.wikia.nocookie.net/sonic/images/b/b4/E-123_Omega_art_2D_v2.png/revision/latest/scale-to-width-down/250?cb=20201222065954">
-</head>
-
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="settings/style.css" />
+        <link rel="shortcut icon" href="home/images/logo.png" />
+    </head>
+    <body>
     <header>
         <section class="headlines">
             <div class="headers">
@@ -47,20 +43,21 @@ if (!isset($_SESSION["user_id"])) {
         </section>
     </header>
     <main>
-        <div class="container">
-            <h1>Air Pollution Data</h1>
-            <p class="instructions">Enter Latitude and Longitude to retrieve air quality information.</p>
-            <div class="input-section">
-                <input type="text" id="latitude" placeholder="Latitude">
-                <input type="text" id="longitude" placeholder="Longitude">
-                <button onclick="getAirPollutionData()">Get Data</button>
+        <section class="button-choice" id="button-choice">
+            <div class="buttons">
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Accessiblity</a></li>
+                    <li><a href="#">Notification</a></li>
+                    <li><a href="#">Help and Support</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
             </div>
-            <div class="result" id="result">
-                <!-- Air Pollution goes here -->
-            </div>
-        </div>
-        <script src="pollution/script.js"></script>
+        </section>
+        <section class="text-editior" id="text-editior">
+            <div class="text-box"></div>
+        </section>
     </main>
-</body>
-
+    <script src="settings/script.js"></script>
+    </body>
 </html>

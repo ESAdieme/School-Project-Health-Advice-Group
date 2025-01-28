@@ -1,16 +1,5 @@
 <?php 
-    $db_server = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "healthadvicegroup";
-    $conn = "";
-
-    $conn = new mysqli($db_server, $db_user, $db_pass, $db_name);
-
-    // Check for any connection errors
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    $mysqli = require __DIR__ . "/database.php";
 
     // Get the form data
     $userID = uniqid();
@@ -35,10 +24,10 @@
             header("Location: login.html");
             exit;
         } else {
-            echo "Error inserting data into user_data: " . $conn->error;
+            echo "Error inserting data into user_data: " . $mysqli->connect_error;
         }
     } else {
-        echo "Error inserting into user_information: " . $conn->error;
+        echo "Error inserting into user_information: " . $mysqli->connect_error;
     }
 
     // Close the database connection

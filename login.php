@@ -3,18 +3,17 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    // Database connection
     $mysqli = require __DIR__ . "/database.php";
     
-    // Prepare the SQL query to prevent SQL injection
+    // Prepare the SQL quy to prevent SQL injection
     $sql = sprintf("SELECT * FROM user_information
                     WHERE Username = '%s'",
                    $mysqli->real_escape_string($_POST["username"]));
     
-    // Execute the query
+
     $result = $mysqli->query($sql);
     
-    // Fetch the user record
+
     $user = $result->fetch_assoc();
     
     // Check if the user exists and password is correct
@@ -22,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         if (password_verify($_POST["password"], $user["Password"])) {
             
-            // Fetch user data from the user_data table using User_ID
             $user_id = $user["User_ID"];
             $sql_user_data = sprintf("SELECT * FROM user_data WHERE User_ID = '%s'", 
                                       $mysqli->real_escape_string($user_id));
@@ -48,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: dashboard.php");
             exit;
         } else {
-            // Password mismatch
             $is_invalid = true;
         }
     } else {
