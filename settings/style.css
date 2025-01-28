@@ -148,13 +148,15 @@ nav {
 }
 
 /* Settings Options Selection */
-
+main{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-gap: 0px;
+}
 .buttons{
     max-width: 15vw;
     min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     font-size: 24px;
     background-color: lightgrey;
 }
@@ -169,3 +171,9 @@ nav {
     text-decoration: none;
     color: black;
 }
+
+.text-editior{
+    min-width: 87.65vw;
+    min-height: 90vh;
+    background-color: hsl(0, 0%, 95%);
+} 

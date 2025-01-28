@@ -46,16 +46,18 @@ if (!isset($_SESSION["user_id"])) {
         <section class="button-choice" id="button-choice">
             <div class="buttons">
                 <ul>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Accessiblity</a></li>
-                    <li><a href="#">Notification</a></li>
-                    <li><a href="#">Help and Support</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#" id="option-1">Account</a></li>
+                    <li><a href="#" id="option-2">Accessiblity</a></li>
+                    <li><a href="#" id="option-3">Notification</a></li>
+                    <li><a href="#" id="option-4">Help and Support</a></li>
+                    <li><a href="#" id="option-5">About</a></li>
                 </ul>
             </div>
         </section>
         <section class="text-editior" id="text-editior">
-            <div class="text-box"></div>
+            <div class="text-box" id="text">
+                
+            </div>
         </section>
     </main>
     <script src="settings/script.js"></script>
