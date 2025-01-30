@@ -108,7 +108,7 @@ nav {
 /* Dropdown Select */
 .selected {
     display: none;
-    background-color: #ffffff;
+    background-color: var(--background-colours);
     border: 1px solid #dcdcdc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -138,7 +138,7 @@ nav {
 }
 
 .selected ul li:hover {
-    background-color: #f7f7f7;
+    background-color: var(--input-background);
 }
 
 #select-service:hover {

@@ -35,10 +35,10 @@ if (!isset($_SESSION["user_id"])) {
                                 <ul>
                                     <li><a href="dashboard.php">Dashboard</a></li>
                                     <li><a href="airpollution.php">Air Quality</a></li>
-                                    <li><a href="#">Health Advice</a></li>
+                                    <li><a href="healthadvice.php">Health Advice</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="reviews">Settings</a></li>
+                        <li><a href="settings.php" id="reviews">Settings</a></li>
                         <li><a href="logout.php" id="contactUs">Log out</a></li>
                     </ul>
                 </nav>

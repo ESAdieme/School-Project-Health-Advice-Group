@@ -9,8 +9,11 @@
     --text-colour: rgb(25, 80, 91);
     --hover-colour: rgb(17, 57, 65);
     --input-colour: #0a0a23;
-    --input-background: #1b1b32;
-    --input-text: white;
+    --input-background: #a4a4b4;
+    --input-text: black;
+    --input-box: white;
+    --choices-background: hsl(0, 0%, 95%);
+    --option-background: lightgrey;
 }
 
 html {
@@ -102,7 +105,7 @@ nav {
 /* Dropdown Select */
 .selected {
     display: none;
-    background-color: #ffffff;
+    background-color: var(--background-colours);
     border: 1px solid #dcdcdc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -132,7 +135,7 @@ nav {
 }
 
 .selected ul li:hover {
-    background-color: #f7f7f7;
+    background-color: var(--input-background);
 }
 
 #select-service:hover {
@@ -147,33 +150,312 @@ nav {
     display: block;
 }
 
-/* Settings Options Selection */
+/* Settings Selection */
 main{
     display: grid;
     grid-template-columns: 15vw 85vw;
     grid-gap: 0px;
 }
+
 .buttons{
-    max-width: 15vw;
     min-height: 90vh;
     /* border: 1px solid grey; */
     font-size: 24px;
-    background-color: lightgrey;
+    background-color: var(--option-background);
 }
 
 .buttons ul li{
     margin-left: 3rem;
+    border-radius: 25px;
     padding-top: 30px;
     list-style: none;
 }
 
 .buttons ul li a{
     text-decoration: none;
-    color: black;
+    color: var(--input-text);
 }
 
 .text-editior{
-    min-width: 87.65vw;
     min-height: 90vh;
-    background-color: hsl(0, 0%, 95%);
+    background-color: var(--choices-background);
 } 
+
+/* Account Settings */
+
+.submit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-colours);
+    border-radius: 15px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 9% 0 0 33%;
+    z-index: -999;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-section:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.account label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--input-text);
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.account input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background-color: var(--input-box);
+    color: var(--input-text);
+    box-shadow: 0 0 5px #6a0dad;
+    transition: box-shadow 0.3s ease;
+}
+
+.account input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #4b0082;
+}
+
+#submit-button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #6a0dad;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 15px;
+}
+
+#submit-button:hover {
+    background: #4b0082;
+    transform: scale(1.05);
+}
+
+/* Accessibilty Section */
+
+.accessbility-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-colours);
+    border-radius: 15px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 9% 0 0 33%;
+    z-index: -999;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.accessbility-section:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.accessbility h1 {
+    font-size: 2rem;
+    color: var(--text-colour);
+    margin-bottom: 2rem;
+}
+
+.access-choice {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.access-choice label {
+    font-size: 1.2rem;
+    color: var(--text-colour);
+}
+
+.access-choice input[type="radio"] {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* Privacy Section */
+
+.privacy-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-colours);
+    border-radius: 15px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px; /* Wider to accommodate more text */
+    height: auto;
+    margin: 3% 0 0 33%;
+    z-index: -999;
+    text-align: left; /* Align text to the left */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.privacy-section:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.privacy h1 {
+    font-size: 2rem;
+    color: var(--text-colour);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.privacy-content {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.privacy-content h2 {
+    font-size: 1.5rem;
+    color: var(--text-colour);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-content p {
+    font-size: 1rem;
+    color: var(--text-colour);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.privacy-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-content ul li {
+    font-size: 1rem;
+    color: var(--text-colour);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.privacy-content a {
+    color: var(--hover-colour);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.privacy-content a:hover {
+    color: #bb86fc;
+}
+
+.privacy-content address {
+    font-style: normal;
+    margin-top: 1rem;
+    color: var(--text-colour);
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-colours);
+    border-radius: 15px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px; /* Same as Privacy section for consistency */
+    height: auto;
+    margin: 3% 0 0 33%;
+    z-index: -999;
+    text-align: left;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.about-section:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.about h1 {
+    font-size: 2rem;
+    color: var(--text-colour);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-content {
+    max-height: 60vh; /* Limit height for scrollable content, just like the Privacy section */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    padding-right: 1rem; /* Padding to avoid overlap with scrollbar */
+}
+
+.about-content h2 {
+    font-size: 1.5rem;
+    color: var(--text-colour);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    font-size: 1rem;
+    color: var(--text-colour);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-content ul li {
+    font-size: 1rem;
+    color: var(--text-colour);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.about-content a {
+    color: var(--hover-colour);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-content a:hover {
+    color: #bb86fc; /* Light purple for hover */
+}
+
+.about-content address {
+    font-style: normal;
+    margin-top: 1rem;
+    color: var(--text-colour);
+}

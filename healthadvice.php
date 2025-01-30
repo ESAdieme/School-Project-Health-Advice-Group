@@ -40,7 +40,7 @@ if (!isset($_SESSION["user_id"])) {
                                     <li><a href="dashboard.php">Dashboard</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="reviews">Settings</a></li>
+                        <li><a href="settings.php" id="reviews">Settings</a></li>
                         <li><a href="logout.php" id="contactUs">Log out</a></li>
                     </ul>
                 </nav>

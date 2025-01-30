@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+:root{
+    --background-colours: white;
+}
+
 /* Style the body and set a white background */
 body {
     background-color: white;
@@ -16,7 +20,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: white;
+    background-color: var(--background-colours);
     display: flex;
     justify-content: center;
     align-items: center;

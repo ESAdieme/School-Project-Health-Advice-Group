@@ -31,11 +31,11 @@ if (!isset($_SESSION["user_id"])) {
                             <div class="selected" id="selected">
                                 <ul>
                                     <li><a href="weather.php">Weather Forecasting</a></li>
-                                    <li><a href="dashboard.php">Dashboard</a></li>
+                                    <li><a href="airpollution.php">Air Quality</a></li>
                                     <li><a href="#">Health Advice</a></li>
                             </div>
                         </li>
-                        <li><a href="#" id="reviews">Settings</a></li>
+                        <li><a href="dashboard.php" id="reviews">Dashboard</a></li>
                         <li><a href="logout.php" id="contactUs">Log out</a></li>
                     </ul>
                 </nav>
@@ -47,10 +47,9 @@ if (!isset($_SESSION["user_id"])) {
             <div class="buttons">
                 <ul>
                     <li><a href="#" id="option-1">Account</a></li>
-                    <li><a href="#" id="option-2">Accessiblity</a></li>
-                    <li><a href="#" id="option-3">Notification</a></li>
-                    <li><a href="#" id="option-4">Help and Support</a></li>
-                    <li><a href="#" id="option-5">About</a></li>
+                    <li><a href="#" id="option-2">Appearance</a></li>
+                    <li><a href="#" id="option-3">Privacy</a></li>
+                    <li><a href="#" id="option-4">About</a></li>
                 </ul>
             </div>
         </section>
