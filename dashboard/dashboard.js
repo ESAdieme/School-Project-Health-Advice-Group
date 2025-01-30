@@ -27,10 +27,8 @@ const currentMode = localStorage.getItem('theme');
 
 if (currentMode === 'dark') {
     setDarkMode();
-    darkModeRadio.checked = true;
 } else {
     setLightMode();
-    lightModeRadio.checked = true;
 }
 
 function setDarkMode() {
@@ -38,8 +36,8 @@ function setDarkMode() {
     document.documentElement.style.setProperty('--text-colour', '#e0e0e0');
     document.documentElement.style.setProperty('--hover-colour', '#bb86fc');
     document.documentElement.style.setProperty('--input-background', '#1e1e1e');
-    document.documentElement.style.setProperty('--input-box', '#333');
     document.documentElement.style.setProperty('--input-text', '#fff');
+    document.documentElement.style.setProperty('--hover-options', '#1e1e1e');
 }
 
 function setLightMode() {
@@ -47,6 +45,6 @@ function setLightMode() {
     document.documentElement.style.setProperty('--text-colour', 'rgb(25, 80, 91)');
     document.documentElement.style.setProperty('--hover-colour', 'rgb(17, 57, 65)');
     document.documentElement.style.setProperty('--input-background', '#1b1b32');
-    document.documentElement.style.setProperty('--input-box', '#fff');
-    document.documentElement.style.setProperty('--input-colour', '#0a0a23');
+    document.documentElement.style.setProperty('--input-text', '#0a0a23');
+    document.documentElement.style.setProperty('--hover-options', '#e1e1e1');
 }

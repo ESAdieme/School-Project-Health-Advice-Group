@@ -12,6 +12,7 @@
     --input-colour: #0a0a23;
     --input-background: #1b1b32;
     --input-text: white;
+    --hover-options: #e1e1e1;
 }
 
 html {
@@ -113,7 +114,7 @@ main {
 /* Dropdown Select */
 .selected {
     display: none;
-    background-color: #ffffff;
+    background-color: var(--background-colours);
     border: 1px solid #dcdcdc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -143,7 +144,7 @@ main {
 }
 
 .selected ul li:hover {
-    background-color: #f7f7f7;
+    background-color: var(--hover-options);
 }
 
 #select-service:hover {
@@ -161,7 +162,7 @@ main {
 /* Weather Selection */
 
 .weather-container {
-    background-color: white;
+    background-color: var(--background-colours);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -174,28 +175,32 @@ input {
     width: 200px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: var(--input-colour);
+    color: var(--input-text);
 }
 
 button {
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: var(--text-colour);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--hover-colour);
 }
 
 h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: var(--text-colour);
 }
 
 #weather-info {
     margin-top: 20px;
+    color: var(--text-colour);
 }
 
 p {

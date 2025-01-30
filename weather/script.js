@@ -40,7 +40,7 @@ function displayWeather(data) {
     const description = document.getElementById('description');
     const humidity = document.getElementById('humidity');
     const windSpeed = document.getElementById('wind-speed');
-    const weatherImage = document.getElementById('weather-image');  
+    const weatherImage = document.getElementById('weather-image');
 
     cityName.textContent = `Weather in ${data.name}, ${data.sys.country}`;
     temperature.textContent = `Temperature: ${data.main.temp}°C`;
@@ -88,4 +88,34 @@ if (!localStorage.getItem('hasVisitedLoading')) {
     htmlSelector.style.display = "inline";
     localStorage.removeItem('hasVisitedLoading');
     localStorage.removeItem('load'); //Removes Load in general when complete
+}
+
+// Check if dark mode or light mode was saved in localStorage
+const currentMode = localStorage.getItem('theme');
+
+if (currentMode === 'dark') {
+    setDarkMode();
+    darkModeRadio.checked = true;
+} else {
+    setLightMode();
+    lightModeRadio.checked = true;
+}
+
+function setDarkMode() {
+    document.documentElement.style.setProperty('--background-colours', '#121212');
+    document.documentElement.style.setProperty('--text-colour', '#e0e0e0');
+    document.documentElement.style.setProperty('--hover-colour', '#bb86fc');
+    document.documentElement.style.setProperty('--input-background', '#1e1e1e');
+    document.documentElement.style.setProperty('--input-text', '#fff');
+    document.documentElement.style.setProperty('--hover-options', '#1e1e1e');
+}
+
+function setLightMode() {
+    document.documentElement.style.setProperty('--background-colours', '#f0f0f0');
+    document.documentElement.style.setProperty('--text-colour', 'rgb(25, 80, 91)');
+    document.documentElement.style.setProperty('--hover-colour', 'rgb(17, 57, 65)');
+    document.documentElement.style.setProperty('--input-background', '#1b1b32');
+    document.documentElement.style.setProperty('--input-text', '#0a0a23');
+    document.documentElement.style.setProperty('--input-colour', 'white');
+    document.documentElement.style.setProperty('--hover-options', '#e1e1e1');
 }

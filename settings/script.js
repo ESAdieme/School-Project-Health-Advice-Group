@@ -67,7 +67,8 @@ option2.addEventListener('click', () => {
         document.documentElement.style.setProperty('--input-box', '#333');
         document.documentElement.style.setProperty('--input-text', '#fff');
         document.documentElement.style.setProperty('--choices-background', 'hsl(0, 0.00%, 16.90%)');
-        document.documentElement.style.setProperty('--option-background','rgb(61, 61, 61)');
+        document.documentElement.style.setProperty('--option-background', 'rgb(61, 61, 61)');
+        document.documentElement.style.setProperty('--hover-options', '#1e1e1e');
     }
 
     function setLightMode() {
@@ -78,7 +79,8 @@ option2.addEventListener('click', () => {
         document.documentElement.style.setProperty('--input-box', '#fff');
         document.documentElement.style.setProperty('--input-text', '#000');
         document.documentElement.style.setProperty('--choices-background', 'hsl(0, 0%, 95%)');
-        document.documentElement.style.setProperty('--option-background','lightgrey');
+        document.documentElement.style.setProperty('--option-background', 'lightgrey');
+        document.documentElement.style.setProperty('--hover-options', '#e1e1e1');
     }
 })
 
@@ -187,7 +189,7 @@ option4.addEventListener('click', () => {
 `
 });
 
-function onStart(){
+function onStart() {
     // Check if dark mode or light mode was saved in localStorage
     const currentMode = localStorage.getItem('theme');
 
@@ -207,7 +209,8 @@ function onStart(){
         document.documentElement.style.setProperty('--input-box', '#333');
         document.documentElement.style.setProperty('--input-text', '#fff');
         document.documentElement.style.setProperty('--choices-background', 'hsl(0, 0.00%, 16.90%)');
-        document.documentElement.style.setProperty('--option-background','rgb(61, 61, 61)');
+        document.documentElement.style.setProperty('--option-background', 'rgb(61, 61, 61)');
+        document.documentElement.style.setProperty('--hover-options', '#1e1e1e');
     }
 
     function setLightMode() {
@@ -218,7 +221,8 @@ function onStart(){
         document.documentElement.style.setProperty('--input-box', '#fff');
         document.documentElement.style.setProperty('--input-text', '#000');
         document.documentElement.style.setProperty('--choices-background', 'hsl(0, 0%, 95%)');
-        document.documentElement.style.setProperty('--option-background','lightgrey');
+        document.documentElement.style.setProperty('--option-background', 'lightgrey');
+        document.documentElement.style.setProperty('--hover-options', '#e1e1e1');
     }
 }
 

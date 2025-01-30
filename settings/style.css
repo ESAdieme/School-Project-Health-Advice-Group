@@ -13,7 +13,7 @@
     --input-text: black;
     --input-box: white;
     --choices-background: hsl(0, 0%, 95%);
-    --option-background: lightgrey;
+    --hover-options: #e1e1e1;
 }
 
 html {
@@ -135,7 +135,7 @@ nav {
 }
 
 .selected ul li:hover {
-    background-color: var(--input-background);
+    background-color: var(--hover-options);
 }
 
 #select-service:hover {
@@ -151,35 +151,35 @@ nav {
 }
 
 /* Settings Selection */
-main{
+main {
     display: grid;
     grid-template-columns: 15vw 85vw;
     grid-gap: 0px;
 }
 
-.buttons{
+.buttons {
     min-height: 90vh;
     /* border: 1px solid grey; */
     font-size: 24px;
     background-color: var(--option-background);
 }
 
-.buttons ul li{
+.buttons ul li {
     margin-left: 3rem;
     border-radius: 25px;
     padding-top: 30px;
     list-style: none;
 }
 
-.buttons ul li a{
+.buttons ul li a {
     text-decoration: none;
     color: var(--input-text);
 }
 
-.text-editior{
+.text-editior {
     min-height: 90vh;
     background-color: var(--choices-background);
-} 
+}
 
 /* Account Settings */
 
@@ -313,11 +313,13 @@ main{
     border-radius: 15px;
     padding: 3rem;
     width: 100%;
-    max-width: 800px; /* Wider to accommodate more text */
+    max-width: 800px;
+    /* Wider to accommodate more text */
     height: auto;
     margin: 3% 0 0 33%;
     z-index: -999;
-    text-align: left; /* Align text to the left */
+    text-align: left;
+    /* Align text to the left */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 }
@@ -391,7 +393,8 @@ main{
     border-radius: 15px;
     padding: 3rem;
     width: 100%;
-    max-width: 800px; /* Same as Privacy section for consistency */
+    max-width: 800px;
+    /* Same as Privacy section for consistency */
     height: auto;
     margin: 3% 0 0 33%;
     z-index: -999;
@@ -413,9 +416,12 @@ main{
 }
 
 .about-content {
-    max-height: 60vh; /* Limit height for scrollable content, just like the Privacy section */
-    overflow-y: auto; /* Add scrollbar if content overflows */
-    padding-right: 1rem; /* Padding to avoid overlap with scrollbar */
+    max-height: 60vh;
+    /* Limit height for scrollable content, just like the Privacy section */
+    overflow-y: auto;
+    /* Add scrollbar if content overflows */
+    padding-right: 1rem;
+    /* Padding to avoid overlap with scrollbar */
 }
 
 .about-content h2 {
@@ -451,7 +457,8 @@ main{
 }
 
 .about-content a:hover {
-    color: #bb86fc; /* Light purple for hover */
+    color: #bb86fc;
+    /* Light purple for hover */
 }
 
 .about-content address {

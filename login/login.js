@@ -1,6 +1,5 @@
 const htmlSelector = document.querySelector('html');
 
-const password = document.getElementById
 // If Loading screen hasn't been shown, redirect them to the loading page
 if (!localStorage.getItem('hasVisitedLoading')) {
     // Hides home screen info
@@ -13,3 +12,18 @@ if (!localStorage.getItem('hasVisitedLoading')) {
     localStorage.removeItem('hasVisitedLoading');
     localStorage.removeItem('load'); //Removes Load in general when complete
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Disable right-click
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+    // Disable common developer shortcuts
+    document.addEventListener("keydown", (event) => {
+        if (
+            (event.ctrlKey && event.key.toLowerCase() === "u") || // Ctrl + U (View Source)
+            (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "i") // Ctrl + Shift + I (DevTools)
+        ) {
+            event.preventDefault();
+        }
+    });
+});

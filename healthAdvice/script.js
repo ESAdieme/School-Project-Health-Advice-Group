@@ -20,7 +20,7 @@ if (!localStorage.getItem('hasVisitedLoading')) {
     htmlSelector.style.display = "inline";
     localStorage.removeItem('hasVisitedLoading');
     localStorage.removeItem('load'); //Removes Load in general when complete
-} 
+}
 
 // Check if dark mode or light mode was saved in localStorage
 const currentMode = localStorage.getItem('theme');
@@ -39,6 +39,7 @@ function setDarkMode() {
     document.documentElement.style.setProperty('--hover-colour', '#bb86fc');
     document.documentElement.style.setProperty('--input-background', '#1e1e1e');
     document.documentElement.style.setProperty('--input-color', '#333');
+    document.documentElement.style.setProperty('--hover-options', '#1e1e1e');
     document.documentElement.style.setProperty('--input-text', '#fff');
 }
 
@@ -49,4 +50,5 @@ function setLightMode() {
     document.documentElement.style.setProperty('--input-background', '#1b1b32');
     document.documentElement.style.setProperty('--input-color', '#0a0a23');
     document.documentElement.style.setProperty('--input-text', '#000');
+    document.documentElement.style.setProperty('--hover-options', '#e1e1e1');
 }

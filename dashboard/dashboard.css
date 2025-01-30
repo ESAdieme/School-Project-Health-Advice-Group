@@ -11,6 +11,7 @@
     --input-colour: #0a0a23;
     --input-background: #1b1b32;
     --input-text: white;
+    --hover-options: #e1e1e1;
 }
 
 html {
@@ -133,7 +134,7 @@ nav {
 }
 
 .selected ul li:hover {
-    background-color: var(--input-background);
+    background-color: var(--hover-options);
 }
 
 #select-service:hover {
