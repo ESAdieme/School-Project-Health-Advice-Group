@@ -46,17 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: dashboard.php");
             exit;
         } else {
-            $is_invalid = true;
+            header("Location: ./services/error.php");
         }
     } else {
         // User not found
-        $is_invalid = true;
+        header("Location: error.php");
     }
 }
 
 ?>
-
-<!-- Optionally display login failure message -->
-<?php if ($is_invalid): ?>
-    <p style="color:red;">Invalid username or password. Please try again.</p>
-<?php endif; ?>

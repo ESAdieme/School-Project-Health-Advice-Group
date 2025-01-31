@@ -19,7 +19,7 @@ if (!isset($_SESSION["user_id"])) {
     <title>Health Advice Group - Air Pollution</title>
     <link rel="stylesheet" href="pollution/style.css">
     <link rel="shortcut icon"
-        href="https://static.wikia.nocookie.net/sonic/images/b/b4/E-123_Omega_art_2D_v2.png/revision/latest/scale-to-width-down/250?cb=20201222065954">
+        href="home/images/logo.png">
 </head>
 
 <body>

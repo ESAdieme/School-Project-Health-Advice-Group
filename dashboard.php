@@ -19,7 +19,7 @@ if (!isset($_SESSION["user_id"])) {
     <title>Health Advice Group - Dashboard</title>
     <link rel="stylesheet" href="dashboard/dashboard.css" />
     <link rel="shortcut icon"
-        href="https://en.wikifur.com/w/images/thumb/f/f0/Sonicchannel_amy_nocircle.png/366px-Sonicchannel_amy_nocircle.png" />
+        href="home/images/logo.png" />
 </head>
 
 <body>

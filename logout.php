@@ -7,7 +7,3 @@ session_destroy(); // Destroy the session, ending connection between the server 
 header("Location: index.html");
 exit;
 ?>
-
-<script>
-localStorage.removeItem('theme');
-</script>

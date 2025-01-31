@@ -18,7 +18,7 @@ if (!isset($_SESSION["user_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Advice Group - Weather</title>
     <link rel="stylesheet" href="weather/weather.css">
-    <link rel="shortcut icon" href="https://en.wikifur.com/w/images/3/39/Knuckles_%282D%29.png">
+    <link rel="shortcut icon" href="home/images/logo.png">
 </head>
 
 <body>

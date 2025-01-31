@@ -9,13 +9,15 @@ option1.addEventListener('click', () => {
     textEditior.innerHTML = `
     <section class="submit-section">
         <div class="account">
-            <form id="account-settings" action="./settings.php" method="POST">
+            <form id="account-settings" action="services/updateSettings.php" method="POST">
             <label for="username">Change Username</label>
             <input name="username" id="username" type="text" required>
             <label for="firstName">Change First Name</label>
             <input name="firstName" id="firstName" type="text" required>
             <label for="username">Change Last Name</label>
             <input name="lastName" id="lastName" type="text" required>
+            <label for="email">Gmail</label>
+            <input name="email" id="email" type="email" required>
             <label for="password">Change Password</label>
             <input name="password" id="password" type="password" required>
             <input id="submit-button" type="submit" name="submit" required>
@@ -143,7 +145,7 @@ option3.addEventListener('click', () => {
                 <address>
                     <strong>Health Advice Group</strong><br>
                     Email: <a href="mailto:privacy@healthadvicegroup.com">privacy@healthadvicegroup.com</a><br>
-                    Address: [Insert Fake Address]
+                    Address: 123 Wellness Blbd, Suit 101
                 </address>
             </div>
         </div>
@@ -156,10 +158,10 @@ option4.addEventListener('click', () => {
         <h1>About Us</h1>
         <div class="about-content">
             <p>
-                ### About Us  
-                **Welcome to Health Advice Group – Your Trusted Partner in Health and Wellness**  
+                About Us  
+                <em>Welcome to Health Advice Group – Your Trusted Partner in Health and Wellness</em>
 
-                At **Health Advice Group**, we believe that everyone deserves access to reliable, personalized, and actionable health advice. Founded in [Insert Year], our mission is to empower individuals to take control of their health by providing evidence-based information, practical tips, and innovative tools to support their wellness journey.  
+                At Health Advice Group, we believe that everyone deserves access to reliable, personalized, and actionable health advice. Founded in 1993, our mission is to empower individuals to take control of their health by providing evidence-based information, practical tips, and innovative tools to support their wellness journey.  
 
                 Whether you're looking for guidance on managing a chronic condition, improving your fitness, or simply making healthier lifestyle choices, we’re here to help. Our team of experts is dedicated to making health advice accessible, understandable, and tailored to your unique needs.  
             </p>
