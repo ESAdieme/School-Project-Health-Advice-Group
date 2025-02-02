@@ -12,13 +12,15 @@ if (!isset($_SESSION["user_id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="settings/style.css" />
-        <link rel="shortcut icon" href="home/images/logo.png" />
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="settings/settings.css" />
+    <link rel="shortcut icon" href="home/images/logo.png" />
+</head>
+
+<body>
     <header>
         <section class="headlines">
             <div class="headers">
@@ -55,10 +57,11 @@ if (!isset($_SESSION["user_id"])) {
         </section>
         <section class="text-editior" id="text-editior">
             <div class="text-box" id="text">
-                
+
             </div>
         </section>
     </main>
     <script src="settings/script.js"></script>
-    </body>
+</body>
+
 </html>

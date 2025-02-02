@@ -193,7 +193,7 @@ main {
     width: 100%;
     max-width: 500px;
     height: auto;
-    margin: 9% 0 0 33%;
+    margin: 1% 0 10% 8%;
     z-index: -999;
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
