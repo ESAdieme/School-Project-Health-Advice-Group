@@ -1,4 +1,4 @@
-const apiKey = "36c0f65f2f945402cf22bcb06c3ba907"; // Replace with your OpenWeatherMap API key
+const apiKey = "36c0f65f2f945402cf22bcb06c3ba907"; // Gets API Key from OpenWeatherAPI
 
 async function getAirPollutionData() {
     const country = document.getElementById('country').value.trim();
@@ -9,7 +9,7 @@ async function getAirPollutionData() {
     }
 
     try {
-        //Get country coordinates using OpenWeather Geocoding API
+        //Gets country coordinates using OpenWeather Geocoding API
         const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=1&appid=${apiKey}`;
         const geoResponse = await fetch(geoUrl);
         if (!geoResponse.ok) throw new Error("Failed to fetch location data");
@@ -20,7 +20,7 @@ async function getAirPollutionData() {
             return;
         }
 
-        const lat = geoData[0].lat;
+        const lat = geoData[0].lat; //Gets Lat and Lon From GeoCoding API
         const lon = geoData[0].lon;
 
         //Fetch air pollution data
