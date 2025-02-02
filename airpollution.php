@@ -18,8 +18,7 @@ if (!isset($_SESSION["user_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Advice Group - Air Pollution</title>
     <link rel="stylesheet" href="pollution/style.css">
-    <link rel="shortcut icon"
-        href="home/images/logo.png">
+    <link rel="shortcut icon" href="home/images/logo.png">
 </head>
 
 <body>
@@ -51,9 +50,8 @@ if (!isset($_SESSION["user_id"])) {
             <h1>Air Pollution Data</h1>
             <p class="instructions">Enter Latitude and Longitude to retrieve air quality information.</p>
             <div class="input-section">
-                <input type="text" id="latitude" placeholder="Latitude">
-                <input type="text" id="longitude" placeholder="Longitude">
-                <button onclick="getAirPollutionData()">Get Data</button>
+                <input type="text" id="country" placeholder="Enter country name">
+                <button onclick="getAirPollutionData()">Get Air Pollution Data</button>
             </div>
             <div class="result" id="result">
                 <!-- Air Pollution goes here -->

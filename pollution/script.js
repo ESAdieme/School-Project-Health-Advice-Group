@@ -1,44 +1,58 @@
 const apiKey = "36c0f65f2f945402cf22bcb06c3ba907"; // Replace with your OpenWeatherMap API key
 
-const service = document.getElementById("select-service");
-const dropdownSelected = document.getElementById("selected");
-
-const htmlSelector = document.querySelector('html');
-
 async function getAirPollutionData() {
-    const lat = document.getElementById('latitude').value;
-    const lon = document.getElementById('longitude').value;
+    const country = document.getElementById('country').value.trim();
 
-    if (!lat || !lon) {
-        alert("Please enter both latitude and longitude.");
+    if (!country) {
+        alert("Please enter a country name.");
         return;
     }
 
-    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
     try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch data");
-        const data = await response.json();
+        //Get country coordinates using OpenWeather Geocoding API
+        const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=1&appid=${apiKey}`;
+        const geoResponse = await fetch(geoUrl);
+        if (!geoResponse.ok) throw new Error("Failed to fetch location data");
+        const geoData = await geoResponse.json();
 
+        if (geoData.length === 0) {
+            alert("Invalid country name. Please try again.");
+            return;
+        }
+
+        const lat = geoData[0].lat;
+        const lon = geoData[0].lon;
+
+        //Fetch air pollution data
+        const pollutionUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        const pollutionResponse = await fetch(pollutionUrl);
+        if (!pollutionResponse.ok) throw new Error("Failed to fetch air pollution data");
+        const pollutionData = await pollutionResponse.json();
+
+        // Display results
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
-            <h3>Air Pollution Data:</h3>
-            <p>Air Quality Index (AQI): ${data.list[0].main.aqi}</p>
-            <p>CO: ${data.list[0].components.co} μg/m³</p>
-            <p>NO: ${data.list[0].components.no} μg/m³</p>
-            <p>NO₂: ${data.list[0].components.no2} μg/m³</p>
-            <p>O₃: ${data.list[0].components.o3} μg/m³</p>
-            <p>SO₂: ${data.list[0].components.so2} μg/m³</p>
-            <p>PM2.5: ${data.list[0].components.pm2_5} μg/m³</p>
-            <p>PM10: ${data.list[0].components.pm10} μg/m³</p>
-            <p>NH₃: ${data.list[0].components.nh3} μg/m³</p>
+            <h3>Air Pollution Data for ${geoData[0].name}:</h3>
+            <p>Air Quality Index (AQI): ${pollutionData.list[0].main.aqi}</p>
+            <p>CO: ${pollutionData.list[0].components.co} μg/m³</p>
+            <p>NO: ${pollutionData.list[0].components.no} μg/m³</p>
+            <p>NO₂: ${pollutionData.list[0].components.no2} μg/m³</p>
+            <p>O₃: ${pollutionData.list[0].components.o3} μg/m³</p>
+            <p>SO₂: ${pollutionData.list[0].components.so2} μg/m³</p>
+            <p>PM2.5: ${pollutionData.list[0].components.pm2_5} μg/m³</p>
+            <p>PM10: ${pollutionData.list[0].components.pm10} μg/m³</p>
+            <p>NH₃: ${pollutionData.list[0].components.nh3} μg/m³</p>
         `;
     } catch (error) {
         alert("Error fetching data. Please try again.");
         console.error(error);
     }
 }
+
+const service = document.getElementById("select-service");
+const dropdownSelected = document.getElementById("selected");
+
+const htmlSelector = document.querySelector('html');
 
 // Toggle dropdown visibility on click
 service.addEventListener("click", () => {
