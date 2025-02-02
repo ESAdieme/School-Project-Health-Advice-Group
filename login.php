@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else {
         // User not found
-        header("Location: error.php");
+        header("Location: ./services/error.php");
     }
 }
 
