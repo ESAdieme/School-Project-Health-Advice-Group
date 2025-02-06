@@ -44,12 +44,11 @@ Health Advice Group provides expert advice on managing health conditions affecte
 
 ## Technologies Used
 
-- **Frontend**: React.js, HTML5, CSS3
-- **Backend**: Node.js, Express
+- **Frontend**: HTML5, CSS3, JAVASCRIPT
+- **Backend**: PHP
 - **Weather API**: OpenWeatherMap API
-- **Air Quality API**: Breezometer API
-- **Database**: MongoDB
-- **Authentication**: JWT, OAuth 2.0
+- **Air Quality API**: OpenWeatherMap API
+- **Database**: Phpmyadmin, SQL
 
 ## Contributing
 
