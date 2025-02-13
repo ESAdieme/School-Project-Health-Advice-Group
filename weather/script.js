@@ -1,4 +1,4 @@
-const apiKey = '36c0f65f2f945402cf22bcb06c3ba907';
+const apiKey = '36c0f65f2f945402cf22bcb06c3ba907'; //Get OpenWeatherMap API
 const weatherButton = document.getElementById('get-weather-btn');
 const cityInput = document.getElementById('city-input');
 const weatherCont = document.querySelector('.weather-container');
@@ -10,6 +10,7 @@ const dropdownSelected = document.getElementById("selected");
 const htmlSelector = document.querySelector('html');
 
 
+//Gets weather from HTML Input
 weatherButton.addEventListener('click', () => {
     const city = cityInput.value.trim();
     if (city) {
@@ -17,6 +18,7 @@ weatherButton.addEventListener('click', () => {
     }
 });
 
+//Locates the city using the openweatherMap API
 async function getWeather(city) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -34,6 +36,8 @@ async function getWeather(city) {
     }
 }
 
+
+// Displays Results
 function displayWeather(data) {
     const cityName = document.getElementById('city-name');
     const temperature = document.getElementById('temperature');
